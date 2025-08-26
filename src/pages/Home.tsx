@@ -17,8 +17,8 @@ const experience = [
     location: 'Toronto, ON'
   },
   {
-    company: 'Royal Bank of Canada (RBC Amplify Program)',
-    role: 'Developer',
+    company: 'Royal Bank of Canada',
+    role: 'Developer, RBC Amplify',
     logo: rbcLogo,
     alt: 'RBC logo',
     description: `Architected and built a wire payment routing engine in Java/SpringBoot, integrating SWIFT and internal data to move money efficiently between banks. My customizable route selection algorithm will soon optimize 30,000+ payments/month for RBC’s High Value Payments Engine. I pitched the project to senior execs and 500+ attendees, and learned a ton about product management, communication, and teamwork.`,
@@ -36,7 +36,7 @@ const experience = [
   },
   {
     company: 'HeyBrain AI',
-    role: 'Software Developer Intern – User Interaction',
+    role: 'Software Developer Intern',
     logo: heybrainLogo,
     alt: 'HeyBrain AI logo',
     description: 'Software Developer Intern, focused on user interaction.',
@@ -44,22 +44,22 @@ const experience = [
     location: 'Remote'
   },
   {
-    company: 'Camp Shalom',
-    role: 'Camp Counsellor – Head of Sports',
-    logo: shalomLogo,
-    alt: 'Camp Shalom logo',
-    description: 'Led sports and activities for campers, fostering teamwork and fun.',
-    timeframe: 'Summers 2021–2024',
-    location: 'Gravenhurst, ON'
-  },
-  {
     company: 'Camp Biluim',
     role: 'Camp Counsellor – Head of Sports',
     logo: biluimLogo,
     alt: 'Camp Biluim logo',
     description: 'Led sports and activities for campers, fostering teamwork and fun.',
-    timeframe: 'Summers 2021–2024',
+    timeframe: 'Summers 2022–2024',
     location: 'Mont Tremblant, QC'
+  },
+  {
+    company: 'Camp Shalom',
+    role: 'Camp Counsellor – Head of Hockey',
+    logo: shalomLogo,
+    alt: 'Camp Shalom logo',
+    description: 'Led hockey and activities for campers, fostering teamwork and fun.',
+    timeframe: 'Summer 2021',
+    location: 'Gravenhurst, ON'
   }
 ];
 
@@ -96,15 +96,6 @@ const Home: React.FC = () => (
     </section>
 
     <section>
-      <h3>Awards & Achievements</h3>
-      <ul>
-        <li>McMaster University, Software Engineering & Management (Dean’s Honour List, all 4 years)</li>
-        <li>RBC Amplify Technical Distinction Award ($20,000 top engineering prize)</li>
-        <li>Provisional Patent: Blink, an intelligent wire payment routing engine</li>
-      </ul>
-    </section>
-
-    <section>
       <h3>Professional Experience</h3>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
         {experience.map((exp, idx) => (
@@ -131,6 +122,15 @@ const Home: React.FC = () => (
           </Link>
         ))}
       </div>
+    </section>
+
+    <section>
+      <h3>Awards & Achievements</h3>
+      <ul>
+        <li>McMaster University, Software Engineering & Management (Dean’s Honour List, all 4 years)</li>
+        <li>RBC Amplify Technical Distinction Award ($20,000 top engineering prize)</li>
+        <li>Provisional Patent: Blink, an intelligent wire payment routing engine</li>
+      </ul>
     </section>
 
     <section>
