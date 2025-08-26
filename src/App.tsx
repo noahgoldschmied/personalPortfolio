@@ -1,33 +1,30 @@
-import './App.css'
 
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
+import './App.css';
 
 function App() {
   return (
-    <div className="container">
-      <header>
-        <h1>Noah Goldschmied</h1>
-        <h2>Personal Portfolio</h2>
-      </header>
-      <section>
-        <h3>About Me</h3>
-        <p>
-          Hi! I'm Noah, a passionate developer excited to showcase my work and projects. This is my personal portfolio site built with React and TypeScript.
-        </p>
-      </section>
-      <section>
-        <h3>Projects</h3>
-        <ul>
-          <li>Project 1 (coming soon)</li>
-          <li>Project 2 (coming soon)</li>
-        </ul>
-      </section>
-      <section>
-        <h3>Contact</h3>
-        <p>Email: <a href="mailto:noahgoldschmied@gmail.com">noah.goldschmied@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/noah-goldschmied/" target="_blank" rel="noopener noreferrer">linkedin.com/in/noah-goldschmied/</a></p>
-        <p>GitHub: <a href="https://github.com/noahgoldschmied" target="_blank" rel="noopener noreferrer">github.com/noahgoldschmied</a></p>
-      </section>
-    </div>
+    <Router>
+      <div className="container">
+        <header>
+          <h1>Noah Goldschmied</h1>
+          <h2>Personal Portfolio</h2>
+          <nav style={{ margin: '1.5rem 0' }}>
+            <Link to="/" style={{ marginRight: '1rem' }}>Home</Link>
+            <Link to="/projects" style={{ marginRight: '1rem' }}>Projects</Link>
+            <Link to="/contact">Contact</Link>
+          </nav>
+        </header>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
