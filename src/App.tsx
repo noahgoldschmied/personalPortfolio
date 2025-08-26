@@ -1,33 +1,41 @@
-import './App.css'
 
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import Work from './pages/Work';
+import Awards from './pages/Awards';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
+import './App.css';
 
 function App() {
   return (
-    <div className="container">
+    <Router>
       <header>
-        <h1>Noah Goldschmied</h1>
-        <h2>Personal Portfolio</h2>
+        <h1 className="site-title">
+          <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>Noah Goldschmied</Link>
+        </h1>
+        <div className="header-content">
+          <nav>
+            <Link to="/" style={{ marginRight: '1rem' }}>Home</Link>
+            <Link to="/work" style={{ marginRight: '1rem' }}>Work</Link>
+            <Link to="/awards" style={{ marginRight: '1rem' }}>Awards</Link>
+            <Link to="/projects" style={{ marginRight: '1rem' }}>Projects</Link>
+            <Link to="/contact">Contact</Link>
+          </nav>
+        </div>
       </header>
-      <section>
-        <h3>About Me</h3>
-        <p>
-          Hi! I'm Noah, a passionate developer excited to showcase my work and projects. This is my personal portfolio site built with React and TypeScript.
-        </p>
-      </section>
-      <section>
-        <h3>Projects</h3>
-        <ul>
-          <li>Project 1 (coming soon)</li>
-          <li>Project 2 (coming soon)</li>
-        </ul>
-      </section>
-      <section>
-        <h3>Contact</h3>
-        <p>Email: <a href="mailto:noahgoldschmied@gmail.com">noah.goldschmied@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/noah-goldschmied/" target="_blank" rel="noopener noreferrer">linkedin.com/in/noah-goldschmied/</a></p>
-        <p>GitHub: <a href="https://github.com/noahgoldschmied" target="_blank" rel="noopener noreferrer">github.com/noahgoldschmied</a></p>
-      </section>
-    </div>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/work" element={<Work />} />
+          <Route path="/awards" element={<Awards />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
