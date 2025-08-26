@@ -1,3 +1,25 @@
+/* Card style for experience section */
+.exp-card {
+  background: var(--card-bg, #fff);
+  color: var(--card-text, var(--text));
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  border: 1px solid var(--border, #e0e0e0);
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  min-height: 90px;
+  transition: background 0.2s, color 0.2s;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-bg: #23272f;
+    --card-text: #f7f7f7;
+    --border: #333;
+  }
+}
 /* Make container stretch full width with equal left/right padding */
 .container {
   width: 100vw;
