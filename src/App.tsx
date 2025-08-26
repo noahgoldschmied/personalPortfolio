@@ -10,7 +10,7 @@ import './App.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/personalPortfolio">
       <header>
         <h1 className="site-title">
           <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>Noah Goldschmied</Link>
