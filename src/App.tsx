@@ -10,13 +10,14 @@ function App() {
     <Router>
       <div className="container">
         <header>
-          <h1>Noah Goldschmied</h1>
-          <h2>Personal Portfolio</h2>
-          <nav style={{ margin: '1.5rem 0' }}>
-            <Link to="/" style={{ marginRight: '1rem' }}>Home</Link>
-            <Link to="/projects" style={{ marginRight: '1rem' }}>Projects</Link>
-            <Link to="/contact">Contact</Link>
-          </nav>
+          <h1 className="site-title">Noah Goldschmied</h1>
+          <div className="header-content">
+            <nav>
+              <Link to="/" style={{ marginRight: '1rem' }}>Home</Link>
+              <Link to="/projects" style={{ marginRight: '1rem' }}>Projects</Link>
+              <Link to="/contact">Contact</Link>
+            </nav>
+          </div>
         </header>
         <Routes>
           <Route path="/" element={<Home />} />
