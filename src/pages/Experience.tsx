@@ -1,8 +1,12 @@
+import aepiLogo from '../assets/work_logos/AEpi.png';
+import hjfLogo from '../assets/work_logos/hjf.jpg';
+import jccLogo from '../assets/work_logos/jcc.jfif';
+
 const extracurriculars = [
   {
     org: 'Alpha Epsilon Pi - Hamilton Chapter',
     role: 'President',
-    logo: null, // TODO: Add image
+    logo: aepiLogo,
     alt: 'Alpha Epsilon Pi logo',
     timeframe: '2024 – 2025',
     description: ''
@@ -10,7 +14,7 @@ const extracurriculars = [
   {
     org: 'Hamilton Jewish Foundation',
     role: 'Volunteer',
-    logo: null, // TODO: Add image
+    logo: hjfLogo,
     alt: 'Hamilton Jewish Foundation logo',
     timeframe: '2023 – 2025',
     description: ''
@@ -18,7 +22,7 @@ const extracurriculars = [
   {
     org: 'JCC Inclusion Services',
     role: 'Volunteer/Coach',
-    logo: null, // TODO: Add image
+    logo: jccLogo,
     alt: 'JCC Inclusion Services logo',
     timeframe: '2017-2021',
     description: ''
