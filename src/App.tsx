@@ -1,7 +1,7 @@
 
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
-import Work from './pages/Work';
+import Experience from './pages/Experience';
 import Awards from './pages/Awards';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
@@ -18,7 +18,7 @@ function App() {
         <div className="header-content">
           <nav>
             <Link to="/" style={{ marginRight: '1rem' }}>Home</Link>
-            <Link to="/work" style={{ marginRight: '1rem' }}>Work</Link>
+            <Link to="/experience" style={{ marginRight: '1rem' }}>Experience</Link>
             <Link to="/awards" style={{ marginRight: '1rem' }}>Awards</Link>
             <Link to="/projects" style={{ marginRight: '1rem' }}>Projects</Link>
             <Link to="/contact">Contact</Link>
@@ -28,7 +28,7 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/work" element={<Work />} />
+          <Route path="/experience" element={<Experience />} />
           <Route path="/awards" element={<Awards />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
@@ -39,4 +39,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

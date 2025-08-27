@@ -80,11 +80,11 @@ const Home: React.FC = () => (
   <main>
     <section style={{ display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-        <img src={headshot} alt="Noah Goldschmied headshot" style={{ width: '160px', height: '160px', borderRadius: '50%', objectFit: 'cover', boxShadow: '0 2px 8px rgba(0,0,0,0.12)' }} />
+        <img src={headshot} alt="Noah Goldschmied headshot" style={{ width: '320px', height: '320px', borderRadius: '50%', objectFit: 'cover', boxShadow: '0 2px 8px rgba(0,0,0,0.12)' }} />
         <div>
-          <h2>Hey, I'm Noah Goldschmied!</h2>
+          <h1>Hey, I'm Noah Goldschmied!</h1>
           <p style={{ margin: 0, fontWeight: 500, fontSize: '1.1rem' }}>
-            Software Engineering & Management student at McMaster University.<br />
+            Software Engineering & Management student at McMaster University<br />
             Sports fan. Builder. Team player. Always learning.
           </p>
         </div>
@@ -96,31 +96,39 @@ const Home: React.FC = () => (
     </section>
 
     <section>
-      <h3>Professional Experience</h3>
+      <h3>
+        <Link to="/work" style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}>
+          Professional Experience
+        </Link>
+      </h3>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-        {experience.map((exp, idx) => (
-          <Link
-            key={idx}
-            to={`/experience/${exp.company.replace(/\s+/g, '-').toLowerCase()}`}
-            style={{ textDecoration: 'none' }}
-          >
-            <div className="exp-card" style={{ cursor: 'pointer', transition: 'box-shadow 0.2s', boxShadow: '0 2px 12px rgba(0,0,0,0.07)' }}>
-              <img src={exp.logo} alt={exp.alt} style={{ width: '90px', height: '90px', objectFit: 'contain', borderRadius: '10px', background: '#f7f7f7', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }} />
-              <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-                  <strong>{exp.company}</strong>
-                  <span style={{ color: 'var(--accent)', fontWeight: 500, fontSize: '0.98rem' }}>{exp.timeframe}</span>
-                  {exp.location && (
-                    <span style={{ display: 'inline-flex', alignItems: 'center', color: 'var(--accent2)', fontSize: '0.97rem', marginLeft: '0.3rem', opacity: 0.85 }}>
-                      <LocationPin />{exp.location}
-                    </span>
-                  )}
+        {experience.map((exp, idx) => {
+          // Create a unique anchor id for each experience
+          const anchorId = exp.company.replace(/\s+/g, '-').toLowerCase() + '-' + (exp.role ? exp.role.replace(/\s+/g, '-').toLowerCase() : idx);
+          return (
+            <Link
+              key={idx}
+              to={`/work#${anchorId}`}
+              style={{ textDecoration: 'none' }}
+            >
+              <div className="exp-card" style={{ cursor: 'pointer', transition: 'box-shadow 0.2s', boxShadow: '0 2px 12px rgba(0,0,0,0.07)' }}>
+                <img src={exp.logo} alt={exp.alt} style={{ width: '90px', height: '90px', objectFit: 'contain', borderRadius: '10px', background: '#f7f7f7', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }} />
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+                    <strong>{exp.company}</strong>
+                    <span style={{ color: 'var(--accent)', fontWeight: 500, fontSize: '0.98rem' }}>{exp.timeframe}</span>
+                    {exp.location && (
+                      <span style={{ display: 'inline-flex', alignItems: 'center', color: 'var(--accent2)', fontSize: '0.97rem', marginLeft: '0.3rem', opacity: 0.85 }}>
+                        <LocationPin />{exp.location}
+                      </span>
+                    )}
+                  </div>
+                  <div style={{ fontWeight: 500, margin: '0.2rem 0 0.4rem 0' }}>{exp.role}</div>
                 </div>
-                <div style={{ fontWeight: 500, margin: '0.2rem 0 0.4rem 0' }}>{exp.role}</div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          );
+        })}
       </div>
     </section>
 
