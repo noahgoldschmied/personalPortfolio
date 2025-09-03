@@ -42,10 +42,10 @@ const Awards: React.FC = () => {
     document.title = 'Awards | Noah Goldschmied';
   }, []);
   return (
-    <div className="container">
-      <main style={{ marginBottom: '3em' }}>
-        <h2>Awards & Achievements</h2>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+    <div className="container" style={{ textAlign: 'left' }}>
+      <main style={{ marginBottom: '3em', textAlign: 'left' }}>
+  <h2 style={{ textAlign: 'left' }}>Awards & Achievements</h2>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'flex-start' }}>
           {awards.map((award, idx) => {
             const isLast = idx === awards.length - 1;
             return (
@@ -66,7 +66,7 @@ const Awards: React.FC = () => {
                   </div>
                 )}
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', justifyContent: 'flex-start', textAlign: 'left' }}>
                     <strong>{award.title}</strong>
                     <span style={{ color: 'var(--accent)', fontWeight: 500, fontSize: '0.98rem' }}>{award.subtitle}</span>
                   </div>
