@@ -1,5 +1,6 @@
 
 import React, { useEffect } from 'react';
+import ContactInfo from '../components/ContactInfo';
 import { Link } from 'react-router-dom';
 import headshot from '../assets/Noah/Noah Headshot.jpg';
 import rbcLogo from '../assets/work_logos/RBC.png';
@@ -98,6 +99,10 @@ const Home: React.FC = () => {
         <p style={{ marginTop: '0.5rem' }}>
           Welcome to my digital home. I'm a software engineering student at McMaster University (Honours Bachelor of Engineering & Management, class of 2027), passionate about building things that make a difference—and having fun along the way. Whether it's leading a team, writing code, or hitting the field, I bring energy, curiosity, and a love for learning to everything I do.
         </p>
+
+      <div style={{ margin: '1rem 0 -1rem 0' }}>
+        <ContactInfo />
+      </div>
       </section>
 
       <section>
