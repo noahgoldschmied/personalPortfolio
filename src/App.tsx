@@ -19,8 +19,8 @@ function App() {
           <nav>
             <Link to="/" style={{ marginRight: '1rem' }}>Home</Link>
             <Link to="/experience" style={{ marginRight: '1rem' }}>Experience</Link>
-            <Link to="/awards" style={{ marginRight: '1rem' }}>Awards</Link>
             <Link to="/projects" style={{ marginRight: '1rem' }}>Projects</Link>
+            <Link to="/awards" style={{ marginRight: '1rem' }}>Awards</Link>
             <Link to="/contact">Contact</Link>
           </nav>
         </div>
