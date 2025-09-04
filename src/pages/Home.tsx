@@ -1,6 +1,7 @@
 
 import React, { useEffect } from 'react';
 import ContactInfo from '../components/ContactInfo';
+import LastFmTopArtists from './LastFmTopArtists';
 import { Link } from 'react-router-dom';
 import headshot from '../assets/Noah/Noah Headshot.jpg';
 import rbcLogo from '../assets/work_logos/RBC.png';
@@ -99,14 +100,15 @@ const Home: React.FC = () => {
         <p style={{ marginTop: '0.5rem' }}>
           Welcome to my digital home. I'm a software engineering student at McMaster University (Honours Bachelor of Engineering & Management, class of 2027), passionate about building things that make a difference—and having fun along the way. Whether it's leading a team, writing code, or hitting the field, I bring energy, curiosity, and a love for learning to everything I do.
         </p>
-
-      <div style={{ margin: '1rem 0 -1rem 0' }}>
+        {/* Contact Info just below bio, no extra section wrapper */}
         <ContactInfo />
-      </div>
       </section>
 
+      {/* Last.fm Top Artists Widget between Contact and Experience, no extra margin above */}
+      <LastFmTopArtists />
+
       <section>
-        <h3>
+        <h3 style={{ margin: 0, marginBottom: '1.2rem', fontSize: '1.17rem', fontWeight: 500 }}>
           <Link to="/experience" style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}>
             Professional Experience
           </Link>
@@ -178,6 +180,11 @@ const Home: React.FC = () => {
         <p>
           When I’m not coding, you’ll find me on the field, leading a team, or finding new ways to challenge myself. Go Steelers!
         </p>
+      </section>
+
+      {/* Contact Info at the bottom */}
+      <section>
+        <ContactInfo />
       </section>
     </main>
   );
