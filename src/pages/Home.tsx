@@ -182,10 +182,6 @@ const Home: React.FC = () => {
         </p>
       </section>
 
-      {/* Contact Info at the bottom */}
-      <section>
-        <ContactInfo />
-      </section>
     </main>
   );
 };
