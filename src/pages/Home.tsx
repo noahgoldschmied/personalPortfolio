@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import ContactInfo from '../components/ContactInfo';
 import LastFmTopArtists from './LastFmTopArtists';
@@ -92,20 +91,23 @@ const Home: React.FC = () => {
             <h1>Hey, I'm Noah Goldschmied!</h1>
             <p style={{ margin: 0, fontWeight: 500, fontSize: '1.1rem' }}>
               Software Engineering & Management student at McMaster University<br />
+              Currently at RBC, pushing features to our AI-powered tech support bot<br />
               Sports fan. Builder. Team player. Always learning.
             </p>
           </div>
         </div>
         <div style={{ flexBasis: '100%' }} />
-        <p style={{ marginTop: '0.5rem' }}>
-          Welcome to my digital home. I'm a software engineering student at McMaster University (Honours Bachelor of Engineering & Management, class of 2027), passionate about building things that make a difference—and having fun along the way. Whether it's leading a team, writing code, or hitting the field, I bring energy, curiosity, and a love for learning to everything I do.
-        </p>
-        {/* Contact Info just below bio, no extra section wrapper */}
-        <ContactInfo />
+        <div style={{ flexBasis: '100%' }}>
+          <p style={{ marginTop: '0.5rem', marginBottom: '0.5rem' }}>
+            Welcome to my portfolio! Feel free to check out my experiences and projects on the links above. You can also find a little bit more about what I've achieved there. On this page, you'll find more about me, the person behind the code.
+          </p>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+            {/* Contact Info just below bio, no extra section wrapper */}
+            <ContactInfo />
+            <LastFmTopArtists />
+          </div>
+        </div>
       </section>
-
-      {/* Last.fm Top Artists Widget between Contact and Experience, no extra margin above */}
-      <LastFmTopArtists />
 
       <section>
         <h3 style={{ margin: 0, marginBottom: '1.2rem', fontSize: '1.17rem', fontWeight: 500 }}>
