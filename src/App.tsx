@@ -12,7 +12,7 @@ function App() {
 
   return (
     <>
-      <header>
+      <header className="sticky-header">
         <h1 className="site-title">
           <a href="#home" style={{ color: 'inherit', textDecoration: 'none' }} onClick={e => { e.preventDefault(); scrollToSection('home'); }}>Noah Goldschmied</a>
         </h1>

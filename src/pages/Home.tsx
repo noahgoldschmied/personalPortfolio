@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import ContactInfo from '../components/ContactInfo';
 import LastFmTopArtists from './LastFmTopArtists';
-import AboutMe from './AboutMe';
 import headshot from '../assets/Noah/Noah Headshot.jpg';
 import rbcLogo from '../assets/work_logos/RBC.png';
 import heybrainLogo from '../assets/work_logos/heybrain.webp';
@@ -369,9 +368,13 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <AboutMe />
-      <section id="top-artists" style={{ padding: '3rem 0' }}>
+      <section id="about-me" style={{ padding: '3rem 0', minHeight: '40vh' }}>
+        <h2 style={{ fontSize: '2rem', marginBottom: '1.2rem' }}>About Me</h2>
+        <p style={{ fontSize: '1.1rem', lineHeight: '1.7', maxWidth: '700px' }}>
+          Hi! I'm Noah Goldschmied. When I'm not coding, you'll find me on the field, leading a team, or finding new ways to challenge myself. I love sports, music, and building cool things. This section is all about the fun stuff—hobbies, interests, and what makes me tick outside of work and school.
+        </p>
         <LastFmTopArtists />
+        {/* Add more fun facts, images, or interactive elements here! */}
       </section>
     </main>
   );
