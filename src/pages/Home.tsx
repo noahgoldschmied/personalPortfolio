@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ContactInfo from '../components/ContactInfo';
-import LastFmTopArtists from './LastFmTopArtists';
+import LastFmTopArtists from '../components/LastFmTopArtists';
 import headshot from '../assets/Noah/Noah Headshot.jpg';
 import rbcLogo from '../assets/work_logos/RBC.png';
 import heybrainLogo from '../assets/work_logos/heybrain.webp';
