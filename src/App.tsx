@@ -1,41 +1,36 @@
-
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './pages/Home';
-import Experience from './pages/Experience';
-import Awards from './pages/Awards';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
-import NotFound from './pages/NotFound';
 import './App.css';
 
 function App() {
+  // Scroll to section helper
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <Router>
-      <header>
+    <>
+      <header className="sticky-header">
         <h1 className="site-title">
-          <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }}>Noah Goldschmied</Link>
+          <a href="#home" style={{ color: 'inherit', textDecoration: 'none' }} onClick={e => { e.preventDefault(); scrollToSection('home'); }}>Noah Goldschmied</a>
         </h1>
         <div className="header-content">
           <nav>
-            <Link to="/" style={{ marginRight: '1rem' }}>Home</Link>
-            <Link to="/experience" style={{ marginRight: '1rem' }}>Experience</Link>
-            <Link to="/projects" style={{ marginRight: '1rem' }}>Projects</Link>
-            <Link to="/awards" style={{ marginRight: '1rem' }}>Awards</Link>
-            <Link to="/contact">Contact</Link>
+            <a href="#home" style={{ marginRight: '1rem' }} onClick={e => { e.preventDefault(); scrollToSection('home'); }}>Home</a>
+            <a href="#skills" style={{ marginRight: '1rem' }} onClick={e => { e.preventDefault(); scrollToSection('skills'); }}>Skills</a>
+            <a href="#experience" style={{ marginRight: '1rem' }} onClick={e => { e.preventDefault(); scrollToSection('experience'); }}>Experience</a>
+            <a href="#projects" style={{ marginRight: '1rem' }} onClick={e => { e.preventDefault(); scrollToSection('projects'); }}>Projects</a>
+            <a href="#awards" style={{ marginRight: '1rem' }} onClick={e => { e.preventDefault(); scrollToSection('awards'); }}>Awards</a>
+            <a href="#about-me" onClick={e => { e.preventDefault(); scrollToSection('about-me'); }}>About Me</a>
           </nav>
         </div>
       </header>
       <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/awards" element={<Awards />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <Home />
       </div>
-    </Router>
+    </>
   );
 }
 

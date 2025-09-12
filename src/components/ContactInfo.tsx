@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { MdEmail } from 'react-icons/md';
 import { FaLinkedin, FaGithub, FaRegFilePdf } from 'react-icons/fa';
 
 const ContactInfo: React.FC = () => (
   <section style={{ marginBottom: 0 }}>
     <h3 style={{ marginBottom: 0 }}>
-      <Link to="/contact" style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}>
+      <a href="#about-me" style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}>
         Contact Me!
-      </Link>
+      </a>
     </h3>
     <ul
       style={{
