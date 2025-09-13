@@ -4,10 +4,8 @@ import { FaLinkedin, FaGithub, FaRegFilePdf } from 'react-icons/fa';
 
 const ContactInfo: React.FC = () => (
   <section style={{ marginBottom: 0 }}>
-    <h3 style={{ marginBottom: 0 }}>
-      <a href="#about-me" style={{ color: 'inherit', textDecoration: 'none', cursor: 'pointer' }}>
+    <h3>
         Contact Me!
-      </a>
     </h3>
     <ul
       style={{

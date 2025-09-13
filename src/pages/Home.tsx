@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ContactInfo from '../components/ContactInfo';
 import LastFmTopArtists from '../components/LastFmTopArtists';
 import headshot from '../assets/Noah/Noah Headshot.jpg';
@@ -194,9 +194,14 @@ const Home: React.FC = () => {
   useEffect(() => {
     document.title = 'Home | Noah Goldschmied';
   }, []);
+
+  // Show more/less state for work and projects
+  const [showAllWork, setShowAllWork] = useState(false);
+  const [showAllProjects, setShowAllProjects] = useState(false);
+
   return (
     <main>
-      <section id="home" style={{ display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap', padding: '3rem 0' }}>
+  <section id="home" style={{ display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap', padding: '0rem 0', scrollMarginTop: '80px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
           <img src={headshot} alt="Noah Goldschmied headshot" style={{ width: '320px', height: '320px', borderRadius: '50%', objectFit: 'cover', boxShadow: '0 2px 8px rgba(0,0,0,0.12)' }} />
           <div>
@@ -204,35 +209,82 @@ const Home: React.FC = () => {
             <p style={{ margin: 0, fontWeight: 500, fontSize: '1.1rem' }}>
               Software Engineering & Management student at McMaster University<br />
               Currently at RBC, pushing features to our AI-powered tech support bot<br />
-              Sports fan. Builder. Team player. Always learning.
+              Sports fan. Builder. Team player. Always learning. <br />
+              Looking for Winter & Summer 2026 internships!
             </p>
           </div>
         </div>
-        <div style={{ flexBasis: '100%' }} />
         <div style={{ flexBasis: '100%' }}>
-          <p style={{ marginTop: '0.5rem', marginBottom: '0.5rem' }}>
-            Welcome to my portfolio! Feel free to check out my experiences and projects on the links above. You can also find a little bit more about what I've achieved there. On this page, you'll find more about me, the person behind the code.
-          </p>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0rem' }}>
             {/* Contact Info just below bio, no extra section wrapper */}
             <ContactInfo />
           </div>
         </div>
       </section>
 
-      <section id="skills" style={{ padding: '3rem 0' }}>
-        <h2 style={{ textAlign: 'left' }}>Skills & Tools</h2>
-        <ul>
-          <li>Languages: Python, Java, SQL, Matlab, C, Go</li>
-          <li>Technologies: SpringBoot, PostgreSQL, Pandas, NumPy, Docker, TensorFlow, Keras, OpenShift</li>
-          <li>Tools: Git, Jira, DBeaver, VS Code, JetBrains IDEs, MS Office Suite</li>
-        </ul>
+  <section id="skills" style={{ padding: '0rem 0', scrollMarginTop: '80px' }}>
+        <h2 >Skills & Tools</h2>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
+            <h3 style={{ color: 'var(--accent)', fontSize: '1.2rem', marginBottom: '0.5rem' }}>Languages</h3>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
+              {['Python','Java','SQL', 'TypeScript', 'CSS', 'HTML','Matlab','C','Go'].map(skill => (
+                <span key={skill} style={{
+                  display: 'inline-block',
+                  background: 'var(--accent)',
+                  color: 'var(--accent2)',
+                  borderRadius: '20px',
+                  padding: '0.45em 1.2em',
+                  fontWeight: 600,
+                  fontSize: '1.05rem',
+                  boxShadow: '0 1px 4px rgba(0,0,0,0.10)',
+                  cursor: 'pointer',
+                  transition: 'background 0.2s, color 0.2s',
+                  marginBottom: 0,
+                }}>{skill}</span>
+              ))}
+            </div>
+            <h3 style={{ color: 'var(--accent)', fontSize: '1.2rem', marginBottom: '0.5rem' }}>Technologies</h3>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
+              {['SpringBoot','PostgreSQL','React','Docker','Google Dialogflow', 'Kubernetes','Pandas','NumPy','TensorFlow','Keras','OpenShift'].map(skill => (
+                <span key={skill} style={{
+                  display: 'inline-block',
+                  background: 'var(--accent)',
+                  color: 'var(--accent2)',
+                  borderRadius: '20px',
+                  padding: '0.45em 1.2em',
+                  fontWeight: 600,
+                  fontSize: '1.05rem',
+                  boxShadow: '0 1px 4px rgba(0,0,0,0.10)',
+                  cursor: 'pointer',
+                  transition: 'background 0.2s, color 0.2s',
+                }}>{skill}</span>
+              ))}
+            </div>
+          
+            <h3 style={{ color: 'var(--accent)', fontSize: '1.2rem', marginBottom: '0.5rem' }}>Tools</h3>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
+              {['Git','Jira','Github Actions', 'Figma', 'DBeaver','VS Code','JetBrains IDEs','MS Office Suite'].map(skill => (
+                <span key={skill} style={{
+                  display: 'inline-block',
+                  background: 'var(--accent)',
+                  color: 'var(--accent2)',
+                  borderRadius: '20px',
+                  padding: '0.45em 1.2em',
+                  fontWeight: 600,
+                  fontSize: '1.05rem',
+                  boxShadow: '0 1px 4px rgba(0,0,0,0.10)',
+                  cursor: 'pointer',
+                  transition: 'background 0.2s, color 0.2s',
+                }}>{skill}</span>
+              ))}
+            </div>
+        </div>
       </section>
 
-      <section id="experience" style={{ padding: '3rem 0' }}>
+  <section id="experience" style={{ padding: '0rem 0', scrollMarginTop: '80px' }}>
         <h2 style={{ textAlign: 'left' }}>Work Experience</h2>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'flex-start' }}>
-          {experience.map((exp, idx) => {
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', alignItems: 'flex-start' }}>
+          {(showAllWork ? experience : experience.slice(0,2)).map((exp, idx) => {
             const anchorId = exp.company.replace(/\s+/g, '-').toLowerCase() + '-' + (exp.role ? exp.role.replace(/\s+/g, '-').toLowerCase() : idx);
             return (
               <div
@@ -263,45 +315,21 @@ const Home: React.FC = () => {
             );
           })}
         </div>
-        <h2 style={{ marginTop: '2.5em', textAlign: 'left' }}>Extracurricular & Volunteer Experience</h2>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'flex-start' }}>
-          {extracurriculars.map((item, idx) => {
-            const anchorId = item.org.replace(/\s+/g, '-').toLowerCase() + '-' + (item.role ? item.role.replace(/\s+/g, '-').toLowerCase() : idx);
-            return (
-              <div
-                key={idx}
-                id={anchorId}
-                className="exp-card"
-                style={{ cursor: 'default', transition: 'box-shadow 0.2s', boxShadow: '0 2px 12px rgba(0,0,0,0.07)' }}
-              >
-                <img
-                  src={item.logo || 'https://via.placeholder.com/90x90?text=Logo'}
-                  alt={item.alt}
-                  style={{ width: '90px', height: '90px', objectFit: 'contain', borderRadius: '10px', background: '#f7f7f7', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}
-                />
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', justifyContent: 'flex-start', textAlign: 'left' }}>
-                    <strong>{item.org}</strong>
-                    <span style={{ color: 'var(--accent)', fontWeight: 500, fontSize: '0.98rem' }}>{item.timeframe}</span>
-                  </div>
-                  <div style={{ fontWeight: 500, margin: '0.2rem 0 0.4rem 0' }}>{item.role}</div>
-                  {item.description && (
-                    <div className="exp-description-text" style={{ margin: '0.2rem 0 0.4rem 0', fontSize: '0.98rem' }}>
-                      {item.description}
-                    </div>
-                  )}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        {experience.length > 2 && (
+          <button
+            style={{ marginTop: '1em', padding: '0.5em 1.2em', borderRadius: '20px', background: 'var(--accent)', color: 'var(--accent2)', fontWeight: 600, border: 'none', cursor: 'pointer', fontSize: '1rem', boxShadow: '0 1px 4px rgba(0,0,0,0.10)' }}
+            onClick={() => setShowAllWork(v => !v)}
+          >
+            {showAllWork ? 'Show Less' : 'Show More'}
+          </button>
+        )}
       </section>
 
-      <section id="projects" style={{ padding: '3rem 0' }}>
+  <section id="projects" style={{ padding: '0rem 0', scrollMarginTop: '80px' }}>
         <h2 style={{ textAlign: 'left' }}>Projects</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'flex-start' }}>
-          {projects.map((proj, idx) => {
-            const isLast = idx === projects.length - 1;
+          {(showAllProjects ? projects : projects.slice(0,2)).map((proj, idx) => {
+            const isLast = idx === (showAllProjects ? projects.length - 1 : Math.min(1, projects.length - 1));
             return (
               <div
                 key={idx}
@@ -331,10 +359,22 @@ const Home: React.FC = () => {
             );
           })}
         </div>
+        {projects.length > 2 && (
+          <button
+            style={{ marginTop: '1em', padding: '0.5em 1.2em', borderRadius: '20px', background: 'var(--accent)', color: 'var(--accent2)', fontWeight: 600, border: 'none', cursor: 'pointer', fontSize: '1rem', boxShadow: '0 1px 4px rgba(0,0,0,0.10)' }}
+            onClick={() => setShowAllProjects(v => !v)}
+          >
+            {showAllProjects ? 'Show Less' : 'Show More'}
+          </button>
+        )}
       </section>
 
-      <section id="awards" style={{ padding: '3rem 0' }}>
-        <h2 style={{ textAlign: 'left' }}>Awards & Achievements</h2>
+  <section id="about-me" style={{ padding: '0rem 0', minHeight: '40vh', scrollMarginTop: '80px' }}>
+        <h2 style={{ fontSize: '2rem', marginBottom: '1.2rem' }}>About Me</h2>
+        <p style={{ fontSize: '1.1rem', lineHeight: '1.7', maxWidth: '700px' }}>
+          Hi! I'm Noah Goldschmied. When I'm not coding, you'll find me on the field, leading a team, or finding new ways to challenge myself. I love sports, music, and building cool things. This section is all about the fun stuff—hobbies, interests, and what makes me tick outside of work and school.
+        </p>
+        <h2 style={{ marginTop: '2.5em', textAlign: 'left' }}>Awards & Achievements</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'flex-start' }}>
           {awards.map((award, idx) => {
             const isLast = idx === awards.length - 1;
@@ -366,13 +406,38 @@ const Home: React.FC = () => {
             );
           })}
         </div>
-      </section>
-
-      <section id="about-me" style={{ padding: '3rem 0', minHeight: '40vh' }}>
-        <h2 style={{ fontSize: '2rem', marginBottom: '1.2rem' }}>About Me</h2>
-        <p style={{ fontSize: '1.1rem', lineHeight: '1.7', maxWidth: '700px' }}>
-          Hi! I'm Noah Goldschmied. When I'm not coding, you'll find me on the field, leading a team, or finding new ways to challenge myself. I love sports, music, and building cool things. This section is all about the fun stuff—hobbies, interests, and what makes me tick outside of work and school.
-        </p>
+  <h2 style={{ marginTop: '2.5em', textAlign: 'left' }}>Extracurricular & Volunteer Experience</h2>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'flex-start' }}>
+    {extracurriculars.map((item, idx) => {
+      const anchorId = item.org.replace(/\s+/g, '-').toLowerCase() + '-' + (item.role ? item.role.replace(/\s+/g, '-').toLowerCase() : idx);
+      return (
+        <div
+          key={idx}
+          id={anchorId}
+          className="exp-card"
+          style={{ cursor: 'default', transition: 'box-shadow 0.2s', boxShadow: '0 2px 12px rgba(0,0,0,0.07)' }}
+        >
+          <img
+            src={item.logo || 'https://via.placeholder.com/90x90?text=Logo'}
+            alt={item.alt}
+            style={{ width: '90px', height: '90px', objectFit: 'contain', borderRadius: '10px', background: '#f7f7f7', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}
+          />
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', justifyContent: 'flex-start', textAlign: 'left' }}>
+              <strong>{item.org}</strong>
+              <span style={{ color: 'var(--accent)', fontWeight: 500, fontSize: '0.98rem' }}>{item.timeframe}</span>
+            </div>
+            <div style={{ fontWeight: 500, margin: '0.2rem 0 0.4rem 0' }}>{item.role}</div>
+            {item.description && (
+              <div className="exp-description-text" style={{ margin: '0.2rem 0 0.4rem 0', fontSize: '0.98rem' }}>
+                {item.description}
+              </div>
+            )}
+          </div>
+        </div>
+      );
+    })}
+  </div>
         <LastFmTopArtists />
         {/* Add more fun facts, images, or interactive elements here! */}
       </section>

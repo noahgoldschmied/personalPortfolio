@@ -22,7 +22,6 @@ function App() {
             <a href="#skills" style={{ marginRight: '1rem' }} onClick={e => { e.preventDefault(); scrollToSection('skills'); }}>Skills</a>
             <a href="#experience" style={{ marginRight: '1rem' }} onClick={e => { e.preventDefault(); scrollToSection('experience'); }}>Experience</a>
             <a href="#projects" style={{ marginRight: '1rem' }} onClick={e => { e.preventDefault(); scrollToSection('projects'); }}>Projects</a>
-            <a href="#awards" style={{ marginRight: '1rem' }} onClick={e => { e.preventDefault(); scrollToSection('awards'); }}>Awards</a>
             <a href="#about-me" onClick={e => { e.preventDefault(); scrollToSection('about-me'); }}>About Me</a>
           </nav>
         </div>
