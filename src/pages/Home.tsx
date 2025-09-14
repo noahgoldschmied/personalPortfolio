@@ -19,48 +19,33 @@ import { FaTrophy } from 'react-icons/fa';
 const experience = [
   {
     company: 'Royal Bank of Canada',
-    role: 'Software Developer Intern – Tia Tech Support Bot',
+    role: 'Software Developer Intern – End User Services',
     logo: rbcLogo,
     alt: 'RBC logo',
     timeframe: 'Sep 2025 – Dec 2025',
-    location: 'Toronto, ON'
+    location: 'Toronto, ON',
+    description: 'As an intern working in End User Services, I am supporting and enhancing Tia. Tia is RBC\'s internal AI-powered tech support bot. My main responsibility is to implement a new conversation flow to help employees who are having device issues. I\'m learning a lot about AI, NLP, and Full Stack development while contributing to a product that helps thousands of employees daily.',
+    skills: ['TypeScript', 'React', 'Google Dialogflow', 'Figma', 'Agile Methodology', 'AI', 'NLP', 'Full Stack Development']
   },
   {
     company: 'Royal Bank of Canada',
     role: 'Developer, RBC Amplify',
     logo: rbcLogo,
     alt: 'RBC logo',
-    description: (
-      <>
-        Architected and built a wire payment routing engine in Java/SpringBoot, integrating SWIFT and internal data to move money efficiently between banks. My customizable route selection algorithm will soon optimize 30,000+ payments/month for RBC’s High Value Payments Engine. I pitched the project to senior execs and 500+ attendees, and learned a ton about product management, communication, and teamwork.
-        <div style={{ marginTop: '0.7em' }}>
-          <img
-            src={amplifyImg}
-            alt="RBC Amplify Team"
-            style={{
-              maxWidth: '700px',
-              width: '100%',
-              borderRadius: '10px',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.13)',
-              float: 'left',
-              marginRight: '1.5em',
-              marginBottom: '1em'
-            }}
-          />
-        </div>
-      </>
-    ),
+    description: 'RBC Amplify is an innovation program where students are placed on teams of 4, and are given real business problems to solve. My team had to solve the problem of optimizing wire payments, and we created Blink, an intelligent wire payment routing engine. With Blink, RBC will be able to move an additional 30,000 transactions a month without human intervention, placing the bank among global leaders in automation rate. Blink was built using a Java & Spring Boot backend, PostgreSQL databases, TypeScript & Next.js frontend, and deployed with Docker & Kubernetes. We pitched our solution to senior RBC executives on the final week of the program, and won the Technical Distinction Award for best technical solution.',
     timeframe: 'May 2025 – Aug 2025',
-    location: 'Toronto, ON'
+    location: 'Toronto, ON',
+    skills: ['Java', 'SpringBoot', 'PostgreSQL', 'Product Management', 'Communication', 'Teamwork', 'Pitching', 'DBeaver']
   },
   {
     company: 'Jacor Marketing',
     role: 'Warehouse Clerk & Inventory Manager',
     logo: jacorLogo,
     alt: 'Jacor Marketing logo',
-    description: 'Warehouse Clerk & Inventory Manager.',
+    description: 'At Jacor, I was in charge of managing inventory and fulfilling orders of graduation items (gowns, caps, tassels, etc.) for schools across Canada. This role required strong organizational skills, attention to detail, and the ability to work efficiently in a fast-paced environment. I collaborated with team members to ensure timely order processing and maintained accurate inventory records.',
     timeframe: 'Apr 2024 – Jun 2024',
-    location: 'Vaughan, ON'
+    location: 'Vaughan, ON',
+    skills: ['Inventory Management', 'Team Collaboration', 'Attention to Detail', 'Organization', 'Warehouse Operations']
   },
   {
     company: 'HeyBrain AI',
@@ -69,7 +54,8 @@ const experience = [
     alt: 'HeyBrain AI logo',
     description: 'Software Developer Intern, focused on user interaction.',
     timeframe: 'Apr 2023 – Jun 2023',
-    location: 'Remote'
+    location: 'Remote',
+    skills: ['User Interaction', 'Software Development']
   },
   {
     company: 'Camp Biluim',
@@ -78,7 +64,8 @@ const experience = [
     alt: 'Camp Biluim logo',
     description: 'Led sports and activities for campers, fostering teamwork and fun.',
     timeframe: 'Summers 2022–2024',
-    location: 'Mont Tremblant, QC'
+    location: 'Mont Tremblant, QC',
+    skills: ['Leadership', 'Teamwork', 'Sports Coaching']
   },
   {
     company: 'Camp Shalom',
@@ -87,7 +74,8 @@ const experience = [
     alt: 'Camp Shalom logo',
     description: 'Led hockey and activities for campers, fostering teamwork and fun.',
     timeframe: 'Summer 2021',
-    location: 'Gravenhurst, ON'
+    location: 'Gravenhurst, ON',
+    skills: ['Leadership', 'Teamwork', 'Hockey Coaching']
   }
 ];
 
@@ -308,6 +296,26 @@ const Home: React.FC = () => {
                   {exp.description && (
                     <div className="exp-description-text" style={{ margin: '0.2rem 0 0.4rem 0', fontSize: '0.98rem' }}>
                       {typeof exp.description === 'string' ? exp.description : exp.description}
+                    </div>
+                  )}
+                  {/* Skills section for each experience card */}
+                  {exp.skills && exp.skills.length > 0 && (
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem', marginTop: '0.5em' }}>
+                      {exp.skills.map(skill => (
+                        <span key={skill} style={{
+                          display: 'inline-block',
+                          background: 'var(--accent)',
+                          color: 'var(--accent2)',
+                          borderRadius: '20px',
+                          padding: '0.45em 1.2em',
+                          fontWeight: 400,
+                          fontSize: '0.75rem',
+                          boxShadow: '0 1px 4px rgba(0,0,0,0.10)',
+                          cursor: 'pointer',
+                          transition: 'background 0.2s, color 0.2s',
+                          marginBottom: 0,
+                        }}>{skill}</span>
+                      ))}
                     </div>
                   )}
                 </div>
