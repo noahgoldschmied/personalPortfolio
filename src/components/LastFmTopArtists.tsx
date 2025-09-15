@@ -124,8 +124,11 @@ const LastFmTopArtists: React.FC = () => {
   const artist = artists[current];
 
   return (
-    <section style={{ marginTop: 0, marginBottom: '2rem', padding: 0, textAlign: 'left', maxWidth: 600 }}>
-      <h3 style={{ margin: 0, marginBottom: '1.2rem', fontSize: '1.17rem', fontWeight: 500 }}>My Top Artists This Week</h3>
+    <section style={{ marginTop: '2rem', marginBottom: '2rem', padding: 0, textAlign: 'left', maxWidth: 600 }}>
+      <h3> My Top Artists This Week</h3>
+      <p style={{ fontSize: '0.95rem', marginBottom: '0.4em', marginTop: '-1.2em' }}>
+          A look into my recent music taste!
+        </p>
       <div style={{ width: '100%', maxWidth: 340, marginBottom: '1.2rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
         {/* Left-aligned content block for image, name, playcount */}
         {/* Center image, name, playcount over the third dot (of 5) by offsetting with left margin */}
