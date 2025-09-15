@@ -612,7 +612,7 @@ const Home: React.FC = () => {
       {/* About Me Section */}
       <section id="about-me" style={{ padding: '0rem 0', minHeight: '40vh', scrollMarginTop: '80px' }}>
         <h2 style={{ textAlign: 'left' }}>About Me</h2>
-        <p style={{ fontSize: '1rem', lineHeight: '0.3', marginBottom: '2em' }}>
+        <p style={{ fontSize: '1rem', marginBottom: '2em' }}>
           Learn about my achievements, activities, and what makes me tick outside of work!<br />
         </p>
         <h3>Awards & Achievements</h3>
