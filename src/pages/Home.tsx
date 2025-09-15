@@ -7,15 +7,11 @@ import heybrainLogo from '../assets/work_logos/heybrain.webp';
 import jacorLogo from '../assets/work_logos/Jacor.jpg';
 import biluimLogo from '../assets/work_logos/Biluim.webp';
 import shalomLogo from '../assets/work_logos/campshalom.png';
-import amplifyImg from '../assets/Noah/onstageZoom.jpg';
 import ntsVid from '../assets/demo_videos/NameThatSport.mp4';
 import vankl from '../assets/demo_videos/VANKL_communications.mp4';
 import aepiLogo from '../assets/work_logos/AEpi.png';
 import hjfLogo from '../assets/work_logos/hjf.jpg';
 import jccLogo from '../assets/work_logos/jcc.jfif';
-import project1Img from '../assets/work_logos/AEpi.png';
-import project2Img from '../assets/work_logos/jcc.jfif';
-import project3Img from '../assets/work_logos/RBC.png';
 import terrainImg1 from '../assets/demo_pics/Screenshot 2023-05-23 122414.png';
 import terrainImg2 from '../assets/demo_pics/Screenshot 2023-05-23 122710.png';
 import terrainImg3 from '../assets/demo_pics/Screenshot 2023-05-23 123130.png';
@@ -192,7 +188,7 @@ const experience: Experience[] = [
 const extracurriculars = [
   {
     org: 'Alpha Epsilon Pi - Hamilton Chapter',
-    role: 'President',
+    role: 'President, Vice President',
     logo: aepiLogo,
     alt: 'Alpha Epsilon Pi logo',
     timeframe: '2024 – 2025',
@@ -308,17 +304,17 @@ const awards = [
     logo: null
   },
   {
-    title: "Dean's Honour List",
-    subtitle: 'All 4 years at McMaster University',
-    description: 'Consistent academic achievement in Software Engineering & Management.',
+    title: 'Provisional Patent: Blink',
+    subtitle: 'Intelligent wire payment routing engine',
+    description: 'Invented and filed a provisional patent for a payment routing engine.',
     icon: <FaTrophy size={48} color="var(--accent, #ffb612)" title="Trophy icon" />,
     alt: 'Trophy icon',
     logo: null
   },
   {
-    title: 'Provisional Patent: Blink',
-    subtitle: 'Intelligent wire payment routing engine',
-    description: 'Invented and filed a provisional patent for a payment routing engine.',
+    title: "Dean's Honour List",
+    subtitle: 'All 4 years at McMaster University',
+    description: 'Consistent academic achievement in Software Engineering & Management.',
     icon: <FaTrophy size={48} color="var(--accent, #ffb612)" title="Trophy icon" />,
     alt: 'Trophy icon',
     logo: null
@@ -608,76 +604,44 @@ const Home: React.FC = () => {
 
       {/* About Me Section */}
       <section id="about-me" style={{ padding: '0rem 0', minHeight: '40vh', scrollMarginTop: '80px' }}>
-        <h2 style={{ fontSize: '2rem', marginBottom: '1.2rem' }}>About Me</h2>
-        <p style={{ fontSize: '1.1rem', lineHeight: '1.7', maxWidth: '700px' }}>
-          Hi! I'm Noah Goldschmied. When I'm not coding, you'll find me on the field, leading a team, or finding new ways to challenge myself. I love sports, music, and building cool things. This section is all about the fun stuff—hobbies, interests, and what makes me tick outside of work and school.
+        <h2 style={{ textAlign: 'left' }}>About Me</h2>
+        <p style={{ fontSize: '1rem', lineHeight: '0.3', marginBottom: '2em' }}>
+          Learn about my achievements, activities, and what makes me tick outside of work!<br />
         </p>
-        <h2 style={{ marginTop: '2.5em', textAlign: 'left' }}>Awards & Achievements</h2>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'flex-start' }}>
-          {awards.map((award, idx) => {
-            const isLast = idx === awards.length - 1;
-            return (
-              <div
-                key={idx}
-                className="exp-card"
-                style={{ gap: '1.5rem', marginBottom: isLast ? '0.5em' : undefined }}
-              >
-                {award.logo ? (
-                  <img
-                    src={award.logo}
-                    alt={award.alt}
-                    style={{ maxWidth: '600px', maxHeight: '600px', width: '90px', height: '90px', objectFit: 'contain', borderRadius: '10px', background: '#f7f7f7', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}
-                  />
-                ) : (
-                  <div style={{ minWidth: 90, minHeight: 90, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--card-bg, #f7f7f7)', borderRadius: '10px', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}>
-                    {award.icon}
-                  </div>
-                )}
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', justifyContent: 'flex-start', textAlign: 'left' }}>
-                    <strong>{award.title}</strong>
-                    <span style={{ color: 'var(--accent)', fontWeight: 500, fontSize: '0.98rem' }}>{award.subtitle}</span>
-                  </div>
-                  <div className="exp-description-text" style={{ fontWeight: 500, margin: '0.2rem 0 0.4rem 0', fontSize: '0.98rem' }}>{award.description}</div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-        <h2 style={{ marginTop: '2.5em', textAlign: 'left' }}>Extracurricular & Volunteer Experience</h2>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'flex-start' }}>
-          {extracurriculars.map((item, idx) => {
-            const anchorId = item.org.replace(/\s+/g, '-').toLowerCase() + '-' + (item.role ? item.role.replace(/\s+/g, '-').toLowerCase() : idx);
-            return (
-              <div
-                key={idx}
-                id={anchorId}
-                className="exp-card"
-                style={{ cursor: 'default', transition: 'box-shadow 0.2s', boxShadow: '0 2px 12px rgba(0,0,0,0.07)' }}
-              >
-                <img
-                  src={item.logo || 'https://via.placeholder.com/90x90?text=Logo'}
-                  alt={item.alt}
-                  style={{ maxWidth: '600px', maxHeight: '600px', width: '90px', height: '90px', objectFit: 'contain', borderRadius: '10px', background: '#f7f7f7', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}
-                />
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', justifyContent: 'flex-start', textAlign: 'left' }}>
-                    <strong>{item.org}</strong>
-                    <span style={{ color: 'var(--accent)', fontWeight: 500, fontSize: '0.98rem' }}>{item.timeframe}</span>
-                  </div>
-                  <div style={{ fontWeight: 500, margin: '0.2rem 0 0.4rem 0' }}>{item.role}</div>
-                  {item.description && (
-                    <div className="exp-description-text" style={{ margin: '0.2rem 0 0.4rem 0', fontSize: '0.98rem' }}>
-                      {item.description}
-                    </div>
-                  )}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <h3>Awards & Achievements</h3>
+        <p style={{ fontSize: '0.95rem', marginBottom: '0.4em', marginTop: '-1.2em' }}>
+          Highlights of awards and accomplishments I've earned.
+        </p>
+        <ul style={{ marginLeft: '1.5em', marginTop: '0.3em', marginBottom: '2.5em', fontSize: '1rem', lineHeight: '1.7', padding: 0 }}>
+          {awards.map((award, idx) => (
+            <li key={idx} style={{ marginBottom: '0.5em' }}>
+              <strong>{award.title}</strong>
+              {award.subtitle && <span style={{ color: 'var(--accent)', fontWeight: 500, fontSize: '0.98rem', marginLeft: '0.7em' }}>{award.subtitle}</span>}
+              <div style={{ fontWeight: 500, margin: '0.2rem 0 0.4rem 0', fontSize: '0.98rem' }}>{award.description}</div>
+            </li>
+          ))}
+        </ul>
+        <h3> Extracurricular & Volunteer Experience</h3>
+        <p style={{ fontSize: '0.95rem', marginBottom: '0.4em', marginTop: '-1.2em' }}>
+          Highlights of extracurricular and volunteer experiences I've had.
+        </p>
+        <ul style={{ marginLeft: '1.5em', marginTop: '0.3em', marginBottom: '0.5em', fontSize: '1rem', lineHeight: '1.7', padding: 0 }}>
+          {extracurriculars.map((item, idx) => (
+            <li key={idx} style={{ marginBottom: '0.5em' }}>
+              <strong>{item.org}</strong>
+              {item.timeframe && <span style={{ color: 'var(--accent)', fontWeight: 500, fontSize: '0.98rem', marginLeft: '0.7em' }}>{item.timeframe}</span>}
+              {item.role && <div style={{ fontWeight: 500, margin: '0.2rem 0 0.4rem 0' }}>{item.role}</div>}
+              {item.description && (
+                <div style={{ margin: '0.2rem 0 0.4rem 0', fontSize: '0.98rem' }}>{item.description}</div>
+              )}
+            </li>
+          ))}
+        </ul>
         <LastFmTopArtists />
         {/* Add more fun facts, images, or interactive elements here! */}
+
+
+        <ContactInfo />
       </section>
     </main>
   );
