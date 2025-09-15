@@ -217,10 +217,11 @@ const extracurriculars = [
 ];
 
 const projects: Project[] = [
+  
   {
     name: 'Name That Sport - Neural Network',
     alt: 'Sport ID NN',
-    description: 'I built a neural net in Python (Keras, TensorFlow, Streamlit) to classify sports from images. It was trained on 13,000 images of 100 different sports, and achieves over 80% accuracy. Check out the video demo below!',
+    description: 'Outside of school, I built a neural net in Python (Keras, TensorFlow, Streamlit) to classify sports from images. It was trained on 13,000 images of 100 different sports, and achieves over 80% accuracy. Check out the video demo below!',
     skills: ['Python', 'Keras', 'TensorFlow', 'Streamlit', 'Image Classification', 'Neural Networks'],
     video: ntsVid,
     github: 'https://github.com/noahgoldschmied/Name-That-Sport',
@@ -246,11 +247,52 @@ const projects: Project[] = [
   {
     name: 'Terrain Generation Simulator',
     alt: 'Terrain Generator',
-    description: 'Developed a 2D terrain generator in Java with a custom Polygon ADT, letting users control terrain, temperature, biome, and features.',
-    skills: ['Java', 'Polygon ADT', 'Simulation', 'OOP', 'Procedural Generation'],
+    description: 'For my software design class, myself and two other students developed a 2D terrain generator. The program allows users to generate and customize terrains by adjusting parameters such as terrain type, temperature, biome, and features. The project involved designing a custom Polygon ADT to represent and manipulate the terrain shapes, implementing procedural generation algorithms, and creating a user-friendly interface for interaction. It was built in Java using OOP principles and design patterns.',
+    skills: [
+      'Java',
+      'Polygon ADT',
+      'Simulation',
+      'OOP',
+      'Procedural Generation',
+      'Design Patterns',
+      'Algorithm Design',
+      'Customization',
+      'Teamwork'
+    ],
     images: [terrainImg1, terrainImg2, terrainImg3, terrainImg4],
     video: null,
     github: 'https://github.com/2AA4-W23/a2---mesh-generator-noah-peter-noel',
+    website: null
+  },
+  {
+    name: 'Financial Modelling',
+    alt: 'Financial Modelling',
+    description: 'For my financial modelling course, I completed various projects involving the creation and analysis of financial models using Excel and Python. These projects included building discounted cash flow (DCF) models, sensitivity analyses, and portfolio optimization. The goal was to develop a deep understanding of financial principles and improve my ability to make data-driven decisions based on quantitative analysis.',
+    skills: ['Excel', 'Python', 'Numpy', 'Pandas', 'Financial Analysis', 'Data Visualization'],
+    images: [],
+    video: null,
+    github: null,
+    website: null
+  },
+  {
+    name: 'Software Experiments and Lab Studies',
+    alt: 'Software Experiments and Lab Studies',
+    description: 'In my software experiments and lab studies course, I conducted several experiments to evaluate the performance of different algorithms. These algorithms included sorting algorithms (e.g., quicksort, mergesort), search algorithms (e.g., binary search, linear search), graph algorithms (e.g., Dijkstra\'s algorithm, A* search) and some dynamic programming algorithms (e.g., knapsack problem, longest common subsequence). I implemented these algorithms in Python and measured their execution time and memory usage under various conditions. The experiments helped me understand the trade-offs between different algorithms and the importance of choosing the right algorithm for a given problem.',
+    skills: [
+      'Python',
+      'Sorting Algorithms',
+      'Search Algorithms',
+      'Graph Algorithms',
+      'Dynamic Programming',
+      'Algorithm Analysis',
+      'Performance Evaluation',
+      'Memory Usage',
+      'Experiment Design',
+      'Problem Solving'
+    ],
+    images: [],
+    video: null,
+    github: null,
     website: null
   }
   
@@ -363,6 +405,23 @@ const Home: React.FC = () => {
               }}>{skill}</span>
             ))}
           </div>
+          <h3 style={{ color: 'var(--accent)', fontSize: '1.2rem', marginBottom: '0.5rem' }}>Technologies</h3>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
+              {['SpringBoot','PostgreSQL','React','Docker','Google Dialogflow', 'Kubernetes','Pandas','NumPy','TensorFlow','Keras','OpenShift'].map(skill => (
+                <span key={skill} style={{
+                  display: 'inline-block',
+                  background: 'var(--accent)',
+                  color: 'var(--accent2)',
+                  borderRadius: '20px',
+                  padding: '0.45em 1.2em',
+                  fontWeight: 600,
+                  fontSize: '1.05rem',
+                  boxShadow: '0 1px 4px rgba(0,0,0,0.10)',
+                  cursor: 'pointer',
+                  transition: 'background 0.2s, color 0.2s',
+                }}>{skill}</span>
+              ))}
+            </div>
           <h3 style={{ color: 'var(--accent)', fontSize: '1.2rem', marginBottom: '0.5rem' }}>Tools</h3>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem' }}>
             {['Git','Jira','Github Actions', 'Figma', 'DBeaver','VS Code','JetBrains IDEs','MS Office Suite'].map(skill => (
