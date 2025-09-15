@@ -22,7 +22,7 @@ import { FaTrophy } from 'react-icons/fa';
 function ProjectImageCarousel({ images, alt }: { images: string[]; alt: string }) {
   const [current, setCurrent] = useState(0);
   return (
-    <div style={{ marginTop: '1em', maxWidth: 340, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div className="project-carousel" style={{ marginTop: '1em', maxWidth: 340, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <img
         src={images[current]}
         alt={alt + ' demo'}
@@ -358,9 +358,16 @@ const Home: React.FC = () => {
   return (
     <main>
       {/* Home Section */}
-      <section id="home" style={{ display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap', padding: '0rem 0', scrollMarginTop: '80px' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-          <img src={headshot} alt="Noah Goldschmied headshot" style={{ maxWidth: '600px', maxHeight: '600px', width: '320px', height: '320px', borderRadius: '50%', objectFit: 'cover', boxShadow: '0 2px 8px rgba(0,0,0,0.12)' }} />
+  <section id="home" style={{ padding: '0rem 0', scrollMarginTop: '80px' }}>
+        <div className="home-hero-flex">
+          <div className="home-hero-img-wrap">
+            <img
+              src={headshot}
+              alt="Noah Goldschmied headshot"
+              className="home-hero-img"
+              style={{ maxWidth: '320px', minWidth: '120px', width: '100%', height: 'auto', display: 'block' }}
+            />
+          </div>
           <div>
             <h1>Hey, I'm Noah Goldschmied!</h1>
             <p style={{ margin: 0, fontWeight: 500, fontSize: '1.1rem' }}>
@@ -455,7 +462,7 @@ const Home: React.FC = () => {
                 <img
                   src={exp.logo}
                   alt={exp.alt}
-                  style={{ maxWidth: '600px', maxHeight: '600px', width: '90px', height: '90px', objectFit: 'contain', borderRadius: '10px', background: '#f7f7f7', boxShadow: '0 1px 4px rgba(0,0,0,0.06)' }}
+                  className="exp-card-logo"
                 />
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap', justifyContent: 'flex-start', textAlign: 'left' }}>

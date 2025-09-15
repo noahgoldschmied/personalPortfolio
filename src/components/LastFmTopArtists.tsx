@@ -124,30 +124,56 @@ const LastFmTopArtists: React.FC = () => {
   const artist = artists[current];
 
   return (
-    <section style={{ marginTop: '2rem', marginBottom: '2rem', padding: 0, textAlign: 'left', maxWidth: 600 }}>
+    <section className="lastfm-artists-section" style={{ marginTop: '2rem', marginBottom: '2rem', padding: 0, textAlign: 'left', maxWidth: 600 }}>
       <h3> My Top Artists This Week</h3>
       <p style={{ fontSize: '0.95rem', marginBottom: '0.4em', marginTop: '-1.2em' }}>
           A look into my recent music taste!
         </p>
-      <div style={{ width: '100%', maxWidth: 340, marginBottom: '1.2rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+  <div style={{ width: '100%', maxWidth: 340, marginBottom: '1.2rem', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }} className="lastfm-artists-content">
         {/* Left-aligned content block for image, name, playcount */}
         {/* Center image, name, playcount over the third dot (of 5) by offsetting with left margin */}
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          width: '100%',
-          marginLeft: artists.length === 5 ? '-50px' : artists.length === 3 ? '4px' : artists.length === 1 ? '0' : '0',
-          transition: 'margin-left 0.2s',
-        }}>
+        <div
+          className="lastfm-artist-image-block"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            width: '100%',
+            marginLeft: artists.length === 5 ? '-50px' : artists.length === 3 ? '4px' : artists.length === 1 ? '0' : '0',
+            transition: 'margin-left 0.2s',
+          }}
+        >
           {artist && artist.image && (
-            <img src={artist.image} alt={artist.name} style={{ width: 180, height: 180, borderRadius: '50%', objectFit: 'cover', boxShadow: '0 4px 16px rgba(0,0,0,0.13)', marginBottom: '1em' }} />
+            <img
+              src={artist.image}
+              alt={artist.name}
+              style={{
+                width: 180,
+                height: 180,
+                minWidth: 50,
+                minHeight: 50,
+                borderRadius: '50%',
+                objectFit: 'cover',
+                boxShadow: '0 4px 16px rgba(0,0,0,0.13)',
+                marginBottom: '1em',
+              }}
+            />
           )}
           <a href={artist?.url} target="_blank" rel="noopener noreferrer" style={{ fontWeight: 600, fontSize: '1.15rem', color: 'var(--accent2)', textAlign: 'center', marginBottom: 2 }}>{artist?.name}</a>
           <span style={{ color: '#888', fontSize: '1rem', textAlign: 'center', marginBottom: 8 }}>{artist?.playcount} plays</span>
         </div>
         {/* Navigation menu below image and name, left-aligned */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1.2em', marginTop: '0.7em', justifyContent: 'flex-start', width: '100%' }}>
+        <div
+          className="lastfm-artist-nav"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1.2em',
+            marginTop: '0.7em',
+            justifyContent: 'flex-start',
+            width: '100%',
+          }}
+        >
           <button
             onClick={() => setCurrent((c) => (c === 0 ? artists.length - 1 : c - 1))}
             disabled={artists.length <= 1}
