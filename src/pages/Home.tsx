@@ -13,7 +13,7 @@ import fanbot from '../assets/demo_videos/Fanbot_Demo.mp4';
 import aepiLogo from '../assets/work_logos/AEpi.png';
 import hjfLogo from '../assets/work_logos/hjf.jpg';
 import jccLogo from '../assets/work_logos/jcc.jfif';
-import wealthsimpleLogo from '../assets/work_logos/Wealthsimple.png';
+import wealthsimpleLogo from '../assets/work_logos/wealthsimple.png';
 import terrainImg1 from '../assets/demo_pics/Screenshot 2023-05-23 122414.png';
 import terrainImg2 from '../assets/demo_pics/Screenshot 2023-05-23 122710.png';
 import terrainImg3 from '../assets/demo_pics/Screenshot 2023-05-23 123130.png';
