@@ -9,9 +9,11 @@ import biluimLogo from '../assets/work_logos/Biluim.webp';
 import shalomLogo from '../assets/work_logos/campshalom.png';
 import ntsVid from '../assets/demo_videos/NameThatSport.mp4';
 import vankl from '../assets/demo_videos/VANKL_communications.mp4';
+import fanbot from '../assets/demo_videos/Fanbot_Demo.mp4';
 import aepiLogo from '../assets/work_logos/AEpi.png';
 import hjfLogo from '../assets/work_logos/hjf.jpg';
 import jccLogo from '../assets/work_logos/jcc.jfif';
+import wealthsimpleLogo from '../assets/work_logos/Wealthsimple.png';
 import terrainImg1 from '../assets/demo_pics/Screenshot 2023-05-23 122414.png';
 import terrainImg2 from '../assets/demo_pics/Screenshot 2023-05-23 122710.png';
 import terrainImg3 from '../assets/demo_pics/Screenshot 2023-05-23 123130.png';
@@ -118,13 +120,23 @@ interface Project {
 
 const experience: Experience[] = [
   {
+    company: 'Wealthsimple',
+    role: 'Software Engineering Intern',
+    logo: wealthsimpleLogo,
+    alt: 'Wealthsimple logo',
+    timeframe: 'Jan 2026 – Aug 2026',
+    location: 'Toronto, ON',
+    description: 'Working on the Order Execution Team within Wealthsimple’s Trading Platform, building and maintaining features that serve millions of users using Java and Spring Boot',
+    skills: ['Java', 'Spring Boot', 'Agile Methodology', 'Team Collaboration']
+  },
+  {
     company: 'Royal Bank of Canada',
     role: 'Software Developer Intern – End User Services',
     logo: rbcLogo,
     alt: 'RBC logo',
     timeframe: 'Sep 2025 – Dec 2025',
     location: 'Toronto, ON',
-    description: 'As an intern working in End User Services, I am supporting and enhancing Tia. Tia is RBC\'s internal AI-powered tech support bot. My main responsibility is to implement a new conversation flow to help employees who are having device issues. I\'m learning a lot about AI, NLP, and Full Stack development while contributing to a product that helps thousands of employees daily.',
+    description: 'Built features serving 85,000+ users on Tia, RBC\'s internal AI-powered tech support bot, using TypeScript and React. Created an automated ticket escalation feature that reduced manual work by the Service Now team by 30% and improved response times for critical issues. Utilized Google Dialogflow to enhance Tia\'s natural language understanding capabilities and bilingual support (English and French), providing over 15,000 more employees access to tech support.',
     skills: ['TypeScript', 'React', 'Google Dialogflow', 'Figma', 'Agile Methodology', 'AI', 'NLP', 'Full Stack Development'],
     images: []
   },
@@ -213,7 +225,15 @@ const extracurriculars = [
 ];
 
 const projects: Project[] = [
-  
+  {
+    name: 'Whatsapp Fantasy Manager',
+    alt: 'Whatsapp Fantasy Manager',
+    description: 'A TypeScript project that allows users to chat with and manage their fantasy sports teams on Whatsapp. Deployed on DigitalOcean, connected to whatsapp via the Twilio sandbox.',
+    skills: ['TypeScript', 'Twilio API', 'DigitalOcean', 'Fantasy Sports'],
+    video: fanbot,
+    github: 'https://github.com/noahgoldschmied/WhatsappFantasyManager',
+    website: null
+  },
   {
     name: 'Name That Sport - Neural Network',
     alt: 'Sport ID NN',
@@ -296,6 +316,15 @@ const projects: Project[] = [
 
 const awards = [
   {
+    title: 'Featured in McMaster Engineering Article',
+    subtitle: 'University publication spotlight',
+    description: 'Highlighted in university publication for outstanding performance during RBC Amplify internship.',
+    icon: <FaTrophy size={48} color="var(--accent, #ffb612)" title="Trophy icon" />,
+    alt: 'Trophy icon',
+    logo: null,
+    link: 'https://www.eng.mcmaster.ca/news/how-two-mcmaster-engineering-students-took-on-rbcs-amplify-program-and-won-big/'
+  },
+  {
     title: 'RBC Amplify Technical Distinction Award',
     subtitle: '$20,000 top engineering prize',
     description: 'Awarded for technical excellence and innovation at RBC Amplify.',
@@ -372,9 +401,8 @@ const Home: React.FC = () => {
             <h1>Hey, I'm Noah Goldschmied!</h1>
             <p style={{ margin: 0, fontWeight: 500, fontSize: '1.1rem' }}>
               Software Engineering & Management student at McMaster University.<br />
-              Currently at RBC, pushing features to our AI-powered tech support bot.<br />
-              Sports fan. Builder. Team player. Always learning.<br />
-              Looking for Winter & Summer 2026 internships!
+              Currently at Wealthsimple, making sure our clients' orders execute properly.<br />
+              Sports fan. Builder. Team player. Always learning.
             </p>
           </div>
         </div>
@@ -622,7 +650,13 @@ const Home: React.FC = () => {
         <ul style={{ marginLeft: '1.5em', marginTop: '0.3em', marginBottom: '2.5em', fontSize: '1rem', lineHeight: '1.7', padding: 0 }}>
           {awards.map((award, idx) => (
             <li key={idx} style={{ marginBottom: '0.5em' }}>
-              <strong>{award.title}</strong>
+              {award.link ? (
+                <a href={award.link} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent2)', textDecoration: 'none', fontWeight: 'bold' }}>
+                  <strong style={{ textDecoration: 'underline' }}>{award.title}</strong>
+                </a>
+              ) : (
+                <strong>{award.title}</strong>
+              )}
               {award.subtitle && <span style={{ color: 'var(--accent)', fontWeight: 500, fontSize: '0.98rem', marginLeft: '0.7em' }}>{award.subtitle}</span>}
               <div style={{ fontWeight: 500, margin: '0.2rem 0 0.4rem 0', fontSize: '0.98rem' }}>{award.description}</div>
             </li>
